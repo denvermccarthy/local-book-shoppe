@@ -30,6 +30,17 @@ describe('backend-express-template routes', () => {
     };
     expect(req.body).toEqual(bookObject);
   });
+  it('post to /authors should add a new author', async () => {
+    const res = await request(app).post('/authors').send({
+      name: 'Rick Riordan',
+      dob: '06/05/1964',
+      pob: 'San Antonio, TX',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.name).toBe('Rick Riordan');
+    expect(res.body.dob).toBe('06/05/1964');
+    expect(res.body.pob).toBe('San Antonio, TX');
+  });
 
   afterAll(() => {
     pool.end();
