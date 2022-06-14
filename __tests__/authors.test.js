@@ -16,6 +16,20 @@ describe('backend-express-template routes', () => {
       })
     );
   });
+  test('/authors/:id should render a book object with an authors key', async () => {
+    const req = await request(app).get('/authors/1');
+    const bookObject = {
+      books: [
+        {
+          id: '1',
+          title: 'Harry Potter and the Philosophers Stone',
+          released: 1997,
+        },
+      ],
+      ...authors[0],
+    };
+    expect(req.body).toEqual(bookObject);
+  });
 
   afterAll(() => {
     pool.end();
