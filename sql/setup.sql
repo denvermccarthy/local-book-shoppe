@@ -13,7 +13,7 @@ CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR NOT NULL,
     dob VARCHAR NOT NULL,
-    pob VARCHAR NOT NULL,
+    pob VARCHAR NOT NULL
 );
 
 INSERT INTO books (title, released) VALUES
