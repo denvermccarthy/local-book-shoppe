@@ -10,8 +10,16 @@ describe('backend-express-template routes', () => {
   });
   test('/books should render an array of book objects', async () => {
     const req = await request(app).get('/books');
-
     expect(req.body).toEqual(books);
+  });
+
+  test('/books/:id should render a book object with an authors key', async () => {
+    const req = await request(app).get('/books/1');
+    const bookObject = {
+      authors: [{ id: 1, name: 'J.K. Rowling' }],
+      ...books[0],
+    };
+    expect(req.body).toEqual(bookObject);
   });
   afterAll(() => {
     pool.end();
