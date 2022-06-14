@@ -16,7 +16,14 @@ describe('backend-express-template routes', () => {
   test('/books/:id should render a book object with an authors key', async () => {
     const req = await request(app).get('/books/1');
     const bookObject = {
-      authors: [{ id: 1, name: 'J.K. Rowling' }],
+      authors: [
+        {
+          id: 1,
+          name: 'J. K. Rowling',
+          dob: '07/31/1965',
+          pob: 'Yate, England',
+        },
+      ],
       ...books[0],
     };
     expect(req.body).toEqual(bookObject);
