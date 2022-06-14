@@ -30,7 +30,7 @@ INSERT INTO authors (name, dob, pob) VALUES
 ('J. R. R. Tolkien', '01/03/1892', 'Bloemfontein, Orange Free State'),
 ('E. B. White', '07/11/1899', 'Mount Vernon, New York'),
 ('Margaret Wise Brown', '05/23/1910', 'Brooklyn, New York'),
-('J. K. Rowling', '03/11/1952', 'Yate, England');
+('Douglas Adams', '03/11/1952', 'Cambridge, UK');
 
 CREATE TABLE authors_books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

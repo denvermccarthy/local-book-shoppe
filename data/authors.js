@@ -18,5 +18,5 @@ module.exports = [
     dob: '05/23/1910',
     pob: 'Brooklyn, New York',
   },
-  { id: '5', name: 'J. K. Rowling', dob: '03/11/1952', pob: 'Yate, England' },
+  { id: '5', name: 'Douglas Adams', dob: '03/11/1952', pob: 'Cambridge, UK' },
 ];

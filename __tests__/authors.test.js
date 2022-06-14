@@ -21,7 +21,7 @@ describe('backend-express-template routes', () => {
     const bookObject = {
       books: [
         {
-          id: '1',
+          id: 1,
           title: 'Harry Potter and the Philosophers Stone',
           released: 1997,
         },
