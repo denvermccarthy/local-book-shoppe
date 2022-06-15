@@ -28,6 +28,15 @@ describe('backend-express-template routes', () => {
     };
     expect(req.body).toEqual(bookObject);
   });
+  it('post to /books should add a new book', async () => {
+    const res = await request(app).post('/books').send({
+      title: 'The Lightning Thief',
+      released: 2005,
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.title).toBe('The Lightning Thief');
+    expect(res.body.released).toBe(2005);
+  });
   afterAll(() => {
     pool.end();
   });
